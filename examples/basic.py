@@ -6,7 +6,7 @@ Install the package and start with `streamlit run examples/basic.py`.
 
 import time
 import streamlit as st
-from streamlit_profiler import Profiler
+from wfork_streamlit_profiler import Profiler
 
 
 with Profiler():

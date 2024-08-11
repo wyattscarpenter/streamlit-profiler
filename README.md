@@ -35,7 +35,7 @@ pip install wfork-streamlit-profiler
 
 ```python
 import streamlit as st
-from streamlit_profiler import Profiler
+from wfork_streamlit_profiler import Profiler
 
 with Profiler():
     st.title("My app")

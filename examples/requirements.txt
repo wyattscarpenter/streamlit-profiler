@@ -1,1 +1,1 @@
-wfork-streamlit-profiler==0.2.6
+wfork-streamlit-profiler
