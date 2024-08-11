@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit.components.v1 as components
 from pyinstrument import Profiler as OriginalProfiler
 
 
@@ -79,6 +79,6 @@ class Profiler(OriginalProfiler):
         # html = html.replace(".margins{", ".margins{overflow:scroll;")
 
         # Display modified HTML report in iframe.
-        st.components.v1.html(html, height=600)
+        components.html(html, height=600)
         
         return session

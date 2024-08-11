@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "streamlit-profiler"
-version = "0.2.4"
+version = "0.2.5"
 description = "Runtime profiler for Streamlit, powered by pyinstrument"
 authors = ["Johannes Rieke <johannes.rieke@gmail.com>"]
 license = "MIT"
@@ -10,7 +10,7 @@ homepage = "https://github.com/jrieke/streamlit-profiler"
 [tool.poetry.dependencies]
 python = "^3.7"
 streamlit = "^1.0.0"
-pyinstrument = "==4.1.1"
+pyinstrument = "==4.2.0"
 
 [tool.poetry.dev-dependencies]
 black = "^21.12b0"
