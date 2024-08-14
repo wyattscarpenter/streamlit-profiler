@@ -1,0 +1,7 @@
+version = 1
+requires-python = ">=3.12"
+
+[[distribution]]
+name = "basic-example"
+version = "0.0.0"
+source = { editable = "." }

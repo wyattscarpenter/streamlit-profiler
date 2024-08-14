@@ -1,0 +1,3 @@
+[project]
+name = "basic-example"
+dynamic = ["version"]
