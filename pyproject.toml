@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "wfork-streamlit-profiler"
-version = "0.2.7"
+version = "0.2.8-rc1"
 description = "(fork of) Runtime profiler for Streamlit, powered by pyinstrument"
 authors = ["Johannes Rieke <johannes.rieke@gmail.com>", "Wyatt S Carpenter"]
 license = "MIT"
@@ -10,7 +10,7 @@ homepage = "https://github.com/wyattscarpenter/streamlit-profiler"
 [tool.poetry.dependencies]
 python = "^3.7"
 streamlit = "^1.0.0"
-pyinstrument = "==4.2.0"
+pyinstrument = {extras = ["bin"], version = "==4.7.2"}
 
 [tool.poetry.dev-dependencies]
 black = "^21.12b0"
