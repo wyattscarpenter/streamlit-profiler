@@ -11,8 +11,6 @@ helps you find out which parts of your app are slow. It profiles the code via
 [pyinstrument](https://github.com/joerick/pyinstrument) and shows the results right
 within your Streamlit app.
 
-<sup>Alpha version, use with care.</sup>
-
 ---
 
 <h3 align="center">
@@ -33,22 +31,29 @@ pip install wfork-streamlit-profiler
 
 ## Usage
 
-```python
+```python3
 import streamlit as st
 from wfork_streamlit_profiler import Profiler
 
 with Profiler():
     st.title("My app")
     # ... other code
+```
 
-# Or:
-# p = Profiler()
-# p.start()
-# ...
-# p.stop()
+Or:
+```python3
+import streamlit as st
+from wfork_streamlit_profiler import Profiler
+
+p = Profiler()
+p.start()
+# ... other code
+p.stop()
 ```
 
 Then start your app as usual: `streamlit run my_app.py`
 
 The `Profiler` class is an extension of `pyinstrument.Profiler`, so you can use
 [all of its functions](https://pyinstrument.readthedocs.io/en/latest/reference.html#pyinstrument.Profiler).
+
+Don't want the profiler to immediately display when you stop profiling? Initialize it with `Profiler(auto_output_on_stop=False)` instead, and call the `.output_streamlit()` method whenever you want it to display, instead. You can also set the async_mode of the profiler in the pyinstrument in the same constructor, whatever that means.
