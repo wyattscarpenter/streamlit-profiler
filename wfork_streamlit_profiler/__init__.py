@@ -1,16 +1,35 @@
 import streamlit.components.v1 as components
 from pyinstrument import Profiler as OriginalProfiler
+from pyinstrument.profiler import AsyncMode
+from pyinstrument.session import Session
 
 
 class Profiler(OriginalProfiler):
-    def stop(self):
+    _auto_output_on_stop: bool
+
+    def __init__(
+        self,
+        interval: float = 0.001,
+        async_mode: AsyncMode = "enabled",
+        auto_output_on_stop: bool = True,
+    ):
+        super().__init__(interval, async_mode)
+        self._auto_output_on_stop = auto_output_on_stop
+
+    def stop(self) -> Session:
         session = super().stop()
-        
+
+        if self._auto_output_on_stop:
+            self.output_streamlit()
+
+        return session
+
+    def output_streamlit(self) -> None:
         # Create HTML report of profiling results.
         html = self.output_html()
 
         # Adapt style of html report to match Streamlit's design.
-        
+
         # Default colors for Streamlit's white theme.
         # TODO: Use streamlit's theme colors instead of hardcoding colors. Doesn't work 
         #   currently, see https://github.com/streamlit/streamlit/issues/4198.
@@ -80,5 +99,3 @@ class Profiler(OriginalProfiler):
 
         # Display modified HTML report in iframe.
         components.html(html, height=600)
-        
-        return session
