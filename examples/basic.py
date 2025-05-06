@@ -15,13 +15,13 @@ with Profiler():
     )
     st.write("""Select which functions you want to run:""")
 
-    def clear_sky():
+    def clear_sky() -> None:
         time.sleep(1)
 
-    def inflate_balloons():
+    def inflate_balloons() -> None:
         time.sleep(2)
 
-    def release_balloons():
+    def release_balloons() -> None:
         time.sleep(0.2)
         st.balloons()
 

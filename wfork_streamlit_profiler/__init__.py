@@ -3,6 +3,7 @@ from pyinstrument import Profiler as OriginalProfiler
 from pyinstrument.profiler import AsyncMode
 from pyinstrument.session import Session
 
+# pyright: strict
 
 class Profiler(OriginalProfiler):
     _auto_output_on_stop: bool
@@ -56,7 +57,7 @@ class Profiler(OriginalProfiler):
         # Expander text + triangle
         html = html.replace("hsla(0,0%,100%,.58)", caption_color)
         html = html.replace('fill:"#FFF"', f'fill:"{caption_color}"')
-        html = html.replace('"fill-opacity":".582"', f'"fill-opacity":"1"')
+        html = html.replace('"fill-opacity":".582"', '"fill-opacity":"1"')
         # Vertical guiding lines
         html = html.replace("opacity:.08", "opacity:.4")
         # File name and line (right side)
