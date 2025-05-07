@@ -2,6 +2,7 @@ import streamlit.components.v1 as components
 from pyinstrument import Profiler as OriginalProfiler
 from pyinstrument.profiler import AsyncMode
 from pyinstrument.session import Session
+from typing_extensions import override
 
 # pyright: strict
 
@@ -17,6 +18,7 @@ class Profiler(OriginalProfiler):
         super().__init__(interval, async_mode)
         self._auto_output_on_stop = auto_output_on_stop
 
+    @override
     def stop(self) -> Session:
         session = super().stop()
 
