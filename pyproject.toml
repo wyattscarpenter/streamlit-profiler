@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["black ~= 21.12b0"]
+dev = ["black ~= 21.12b0", "types-openpyxl", "types-python-dateutil"]
 
 [build-system]
 requires = ["poetry-core>=2.0.0"]

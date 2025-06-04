@@ -14,7 +14,7 @@ class Profiler(OriginalProfiler):
         interval: float = 0.001,
         async_mode: AsyncMode = "enabled",
         auto_output_on_stop: bool = True,
-    ):
+    ) -> None:
         super().__init__(interval, async_mode)
         self._auto_output_on_stop = auto_output_on_stop
 

@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+"""This is a fairly generic script to run typecheckers for you automatically.
+It was initially made by Wyatt S Carpenter and carted around between projects.
+The license of this file is public domain, in addition to any other licenses stuck on it."""
+
 from os import system as s, name as os_name
 from sys import argv
 
@@ -18,8 +22,7 @@ def hs(header: str, system_command: str) -> int:
   h(header)
   return s(system_command)
 
-h("uv")
-s("uv --version --verbose || pip install uv --disable-pip-version-check --break-system-packages")
+hs("uv", "uv --version --verbose || pip install uv --disable-pip-version-check --break-system-packages")
 print("Trying to install requirements.txt as a preemptive fallback in case there is no pyproject.toml...") 
 s("uv pip install -r requirements.txt")
 s("uv pip install ruff pyright mypy pytype pip")
@@ -32,7 +35,7 @@ else:
 hs("ruff", "uv run ruff check --no-cache")
 hs("pyright", "uv run pyright")
 h("mypy")
-s("uv run mypy --install-types --non-interactive")
+#s("uv run mypy --install-types --non-interactive")
 s("uv run mypy . --strict --pretty --warn-unreachable --strict-bytes --enable-error-code explicit-override")
 h("pytype")
 s("uv run pytype .")
