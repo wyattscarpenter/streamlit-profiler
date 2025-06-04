@@ -1,6 +1,6 @@
 [project]
 name = "wfork-streamlit-profiler"
-version = "1.4.0"
+version = "1.4.1"
 description = "(fork of) Runtime profiler for Streamlit, powered by pyinstrument"
 authors = [
   {name = "Wyatt S Carpenter"},
@@ -8,7 +8,6 @@ authors = [
 ]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/wyattscarpenter/streamlit-profiler"
 requires-python = ">=3.8"
 
 dependencies = [
@@ -16,6 +15,9 @@ dependencies = [
   "pyinstrument ~=5.0.2",
   "typing-extensions >= 4.5",
 ]
+
+[project.urls]
+homepage = "https://github.com/wyattscarpenter/streamlit-profiler"
 
 [project.optional-dependencies]
 dev = ["black ~= 21.12b0", "types-openpyxl", "types-python-dateutil"]
