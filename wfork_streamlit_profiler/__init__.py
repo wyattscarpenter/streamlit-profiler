@@ -19,7 +19,7 @@ class Profiler(OriginalProfiler):
         self._auto_output_on_stop = auto_output_on_stop
 
     @override
-    def stop(self) -> Session: #type: ignore[override-error, unused-ignore] #workaround for: https://github.com/google/pytype/issues/1917
+    def stop(self) -> Session: #pytype: disable=override-error #workaround for: https://github.com/google/pytype/issues/1917
         session = super().stop()
 
         if self._auto_output_on_stop:
