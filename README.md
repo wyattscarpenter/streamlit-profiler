@@ -1,6 +1,6 @@
 # wfork-streamlit-profiler &nbsp;🏄🏼
 
-[![PyPi](https://img.shields.io/pypi/v/wfork-streamlit-profiler)](https://pypi.org/project/wfork-streamlit-profiler/)
+[![PyPi](https://img.shields.io/pypi/v/wfork-streamlit-profiler)](https://pypi.org/project/wfork-streamlit-profiler/) [![GitHub latest tag](https://img.shields.io/github/v/tag/wyattscarpenter/streamlit-profiler?label=GitHub&logo=github)](https://github.com/wyattscarpenter/streamlit-profiler/)
 
 **Runtime profiler for Streamlit, powered by [pyinstrument](https://github.com/joerick/pyinstrument).**
 
