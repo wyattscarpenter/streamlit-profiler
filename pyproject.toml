@@ -1,6 +1,6 @@
 [project]
 name = "wfork-streamlit-profiler"
-version = "1.7.0"
+version = "1.7.1"
 description = "(fork of) Runtime profiler for Streamlit, powered by pyinstrument"
 authors = [
   {name = "Wyatt S Carpenter"},
